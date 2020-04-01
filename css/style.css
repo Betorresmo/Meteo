@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+}
+
+:root {
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(10deg, #363062 0%, #827397 70%, #4d4c7d 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container {
+  width: 60%;
+  max-width: 800px;
+  max-height: auto;
+  color: #fff;
+}
+
+.container .location h1 {
+  font-size: 1.5rem;
+  padding: 2rem 0;
+}
+
+.container .icon svg {
+  width: 50%;
+  min-width: 300px;
+  fill: #fff;
+}
+
+.container .information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2rem 0;
+}
+
+.container .information .information-temperature {
+  font-size: 2rem;
+}
+
+.container .information .information-temperature:hover {
+  cursor: pointer;
+}
+
+.container .information .information-description {
+  color: rgba(255, 255, 255, 0.658);
+  font-size: 1rem;
+  padding: 0.5rem;
+}

@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+:root {
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+$backgroundColor: linear-gradient(10deg, #363062 0%, #827397 70%, #4d4c7d 100%);
+$fontColor: #fff;
+$descriptionFontColor: rgba(255, 255, 255, 0.658);
+$padding: 2rem 0;
+
+@mixin flexJustifyAlignCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: $backgroundColor;
+  @include flexJustifyAlignCenter();
+}
+
+.container {
+  width: 60%;
+  max-width: 800px;
+  max-height: auto;
+  color: $fontColor;
+
+  & .location h1 {
+    font-size: 1.5rem;
+    padding: $padding;
+  }
+  & .icon svg {
+    width: 50%;
+    min-width: 300px;
+    fill: $fontColor;
+  }
+  & .information {
+    @include flexJustifyAlignCenter();
+    flex-direction: column;
+    padding: $padding;
+
+    & .information-temperature {
+      font-size: 2rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    & .information-description {
+      color: $descriptionFontColor;
+      font-size: 1rem;
+      padding: 0.5rem;
+    }
+  }
+}
