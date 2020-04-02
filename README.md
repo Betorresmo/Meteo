@@ -15,9 +15,9 @@
 
 - [ ] Update interface
 - [ ] User's location is shown above the temperature
-- [ ] Allow user to input any city
-- [ ] Auto complete and suggestions for city inputs
-- [ ] Icons according to the current weather
+- [x] Allow user to input any city
+- [ ] ~Auto complete and suggestions for city inputs~ [Google](https://developers.google.com/places/web-service/autocomplete) wants my credit card 💳
+- [ ] Icons according to the current weather 
 - [ ] Dark theme during night
 - [ ] Detais section (relative humidity, cloud cover, precipitation)
 - [ ] Show forecast for the next 7 days
@@ -31,6 +31,7 @@
 
 ### 📡 APIs
 
-- [7Timer!](http://www.7timer.info/)
+- ~[7Timer!](http://www.7timer.info/)~
+- [Open Weather](https://openweathermap.org/api)
 
 ## [Contact me](https://www.linkedin.com/in/guerrero-roberto/)
