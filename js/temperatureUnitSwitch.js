@@ -1,17 +1,21 @@
-import { temperature, temperatureH2 } from './app.js';
+import { temperatureInCelcius } from './app.js';
 
 export default function switchTemperatureUnit() {
-  let temperatureUnit = document.querySelector('.information-temperature-unit');
-  const temperatureInCelcius = temperature;
+  const temperatureSpan = document.querySelector(
+    '.information-temperature-value'
+  );
+  const temperatureUnit = document.querySelector(
+    '.information-temperature-unit'
+  );
   const temperatureInFarenheit = Math.round(
     (temperatureInCelcius * 9) / 5 + 32
   );
 
   if (temperatureUnit.textContent === 'ºC') {
-    temperatureH2.textContent = temperatureInFarenheit;
+    temperatureSpan.textContent = parseInt(temperatureInFarenheit);
     temperatureUnit.textContent = 'ºF';
   } else {
-    temperatureH2.textContent = temperatureInCelcius;
+    temperatureSpan.textContent = parseInt(temperatureInCelcius);
     temperatureUnit.textContent = 'ºC';
   }
 }

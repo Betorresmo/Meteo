@@ -1,41 +1,28 @@
-export { temperature, temperatureH2 };
-import updateWeatherDescription from './updateWeatherDescription.js';
+export { temperatureInCelcius };
+import setValues from './setValues.js';
 import switchTemperatureUnit from './temperatureUnitSwitch.js';
+import getWeatherData from './getWeatherData.js';
 
-let latitude;
-let longitude;
-let temperatureH2 = document.querySelector('.information-temperature-value');
-let temperature;
+const temperatureH2 = document.querySelector('.information-temperature');
+let temperatureInCelcius;
 
-async function getForecast() {
-  const currentHour = new Date().getHours();
-  const apiResponseIndex = Math.round(currentHour / 3 - 1);
+window.onload = () => {
+  navigator.geolocation.getCurrentPosition(async position => {
+    const coordinates = {
+      latitude: position.coords.latitude,
+      longitude: position.coords.longitude
+    };
+    const data = await getWeatherData('coordinates', '', coordinates);
+    const {
+      main: { temp }
+    } = data;
+    const {
+      weather: [{ description }]
+    } = data;
+    temperatureInCelcius = temp;
 
-  const api = `http://www.7timer.info/bin/api.pl?lon=${longitude}.17&lat=${latitude}.09&product=civil&output=json`;
-  const requestConfig = {
-    method: 'GET',
-    mode: 'cors'
-  };
-
-  try {
-    const response = await fetch(api, requestConfig);
-    const { dataseries } = await response.json();
-    const currentForecast = dataseries[apiResponseIndex];
-
-    updateWeatherDescription(currentForecast.weather);
-    temperature = currentForecast.temp2m;
-    temperatureH2.textContent = temperature;
-  } catch (err) {
-    console.log(err);
-  }
-}
-
-window.onload = async () => {
-  navigator.geolocation.getCurrentPosition(position => {
-    latitude = position.coords.latitude;
-    longitude = position.coords.longitude;
+    console.log(data);
+    setValues(temp, description);
   });
-  getForecast();
 };
-
-temperatureH2.parentElement.addEventListener('click', switchTemperatureUnit);
+temperatureH2.addEventListener('click', switchTemperatureUnit);
