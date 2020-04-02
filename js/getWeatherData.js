@@ -6,7 +6,7 @@ export default async function getWeatherData(
   const apiKey = '492d320005ae2762ded5b985e60ad0ae';
 
   const query =
-    queryType === 'coordinates'
+    queryType === 'byCoordinates'
       ? `lat=${latitude}&lon=${longitude}`
       : `q=${cityName}`;
 
