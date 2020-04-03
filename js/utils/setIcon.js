@@ -8,8 +8,6 @@ function returnIconName(data) {
   const localTime = getLocalTime(utcTimeInMs, localTimezoneInMs);
   const localHour = localTime.getHours();
 
-  console.log(localTime);
-
   const weatherId = data.weather[0].id;
   const isDay = localHour > 6 && localHour <= 18;
 
