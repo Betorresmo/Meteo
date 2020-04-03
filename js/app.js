@@ -1,5 +1,5 @@
 export { temperatureInCelcius };
-import setValues from './setValues.js';
+import setValues from './utils/setValues.js';
 import switchTemperatureUnit from './temperatureUnitSwitch.js';
 import getWeatherData from './getWeatherData.js';
 
@@ -15,16 +15,11 @@ window.onload = () => {
         longitude: position.coords.longitude
       };
       const data = await getWeatherData('byCoordinates', '', coordinates);
-      const {
-        main: { temp }
-      } = data;
-      const {
-        weather: [{ description }]
-      } = data;
-      temperatureInCelcius = temp;
+
+      temperatureInCelcius = data.main.temp;
 
       console.log(data);
-      setValues(temp, description);
+      setValues(data);
     },
     () => console.log('The browser was not able to access your location.')
   );
@@ -35,14 +30,9 @@ temperatureH2.addEventListener('click', switchTemperatureUnit);
 searchButton.addEventListener('click', async () => {
   const cityName = document.querySelector('.search-input').value;
   const data = await getWeatherData('byCityName', encodeURI(cityName), {});
-  const {
-    main: { temp }
-  } = data;
-  const {
-    weather: [{ description }]
-  } = data;
-  temperatureInCelcius = temp;
+
+  temperatureInCelcius = data.main.temp;
 
   console.log(data);
-  setValues(temp, description);
+  setValues(data);
 });

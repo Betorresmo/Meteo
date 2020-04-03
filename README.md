@@ -2,7 +2,8 @@
 <h4 align="center"> 🚧 UNDER CONSTRUCTION 🚧 </h4>
 
 ### 📺 Preview
-<img alt="App preview" title="#weatherapp" src="./app-preview.jpg" width="500px" />
+
+<img alt="App preview" title="#weatherapp" src="./images/app-preview.jpg" width="500px" />
 
 ### 💡 Functionalities
 
@@ -14,16 +15,16 @@
 ### 🛠️ Future implementations
 
 - [ ] Update interface
-- [ ] User's location is shown above the temperature
+- [x] Location shown is indenfied and updated dynamically
 - [x] Allow user to input any city
 - [ ] ~Auto complete and suggestions for city inputs~ [Google](https://developers.google.com/places/web-service/autocomplete) wants my credit card 💳
-- [ ] Icons according to the current weather 
+- [ ] Icons according to the current weather
 - [ ] Dark theme during night
 - [ ] Detais section (relative humidity, cloud cover, precipitation)
 - [ ] Show forecast for the next 7 days
 - [ ] Show min and max temperature
 
-### ⌨️ Code 
+### ⌨️ Code
 
 - [JavaScript](https://www.javascript.com/)
 - [Sass (CSS3)](https://sass-lang.com/)
