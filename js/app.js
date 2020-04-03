@@ -1,7 +1,8 @@
 export { temperatureInCelcius };
 import setValues from './utils/setValues.js';
+import getWeatherData from './utils/getWeatherData.js';
+import setIcon from './utils/setIcon.js';
 import switchTemperatureUnit from './temperatureUnitSwitch.js';
-import getWeatherData from './getWeatherData.js';
 
 const temperatureH2 = document.querySelector('.information-temperature');
 const searchButton = document.querySelector('.search-button');
@@ -20,8 +21,9 @@ window.onload = () => {
 
       console.log(data);
       setValues(data);
+      setIcon(data);
     },
-    () => console.log('The browser was not able to access your location.')
+    () => alert('The browser was not able to access your location.')
   );
 };
 
@@ -35,4 +37,7 @@ searchButton.addEventListener('click', async () => {
 
   console.log(data);
   setValues(data);
+  setIcon(data);
 });
+
+searchButton.addEventListener('click', setIcon);

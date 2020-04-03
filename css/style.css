@@ -39,10 +39,10 @@ body {
   padding: 2rem 0;
 }
 
-.container .icon svg {
+.container .icon img {
+  margin: -10%;
   width: 50%;
   min-width: 300px;
-  fill: #fff;
 }
 
 .container .information {
