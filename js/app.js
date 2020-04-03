@@ -1,7 +1,5 @@
 export { temperatureInCelcius };
-import setValues from './utils/setValues.js';
-import getWeatherData from './utils/getWeatherData.js';
-import setIcon from './utils/setIcon.js';
+import { setIcon, setValues, getWeatherData } from './utils/Index.js';
 import switchTemperatureUnit from './temperatureUnitSwitch.js';
 
 const temperatureH2 = document.querySelector('.information-temperature');
@@ -10,10 +8,10 @@ let temperatureInCelcius;
 
 window.onload = () => {
   navigator.geolocation.getCurrentPosition(
-    async position => {
+    async (position) => {
       const coordinates = {
         latitude: position.coords.latitude,
-        longitude: position.coords.longitude
+        longitude: position.coords.longitude,
       };
       const data = await getWeatherData('byCoordinates', '', coordinates);
 
