@@ -2,6 +2,7 @@ export { temperatureInCelcius };
 import { setIcon, setValues, getWeatherData } from './utils/Index.js';
 import switchTemperatureUnit from './temperatureUnitSwitch.js';
 
+
 const temperatureH2 = document.querySelector('.information-temperature');
 const searchButton = document.querySelector('.search-button');
 let temperatureInCelcius;
@@ -38,4 +39,5 @@ searchButton.addEventListener('click', async () => {
   setIcon(data);
 });
 
-searchButton.addEventListener('click', setIcon);
+/* import getLocalTime from './utils/getLocalTime.js';
+console.log(getLocalTime(28800 * 1000)); */

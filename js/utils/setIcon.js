@@ -1,31 +1,41 @@
+import getLocalTime from './getLocalTime.js';
+
 function returnIconName(data) {
   //Weather Conditions ID Documentation -> https://openweathermap.org/weather-conditions
-  const { dt } = data;
-  const {
-    weather: [{ id }]
-  } = data;
-  const currentHour = new Date(dt * 1000).getHours();
-  const isDay = currentHour > 6 && currentHour <= 18;
 
-  if (id >= 200 && id <= 232) {
+  const utcTimeInMs = data.dt * 1000;
+  const localTimezoneInMs = data.timezone * 1000;
+  const localTime = getLocalTime(utcTimeInMs, localTimezoneInMs);
+  const localHour = localTime.getHours();
+
+  console.log(localTime);
+
+  const weatherId = data.weather[0].id;
+  const isDay = localHour > 6 && localHour <= 18;
+
+  if (weatherId >= 200 && weatherId <= 232) {
     return 'thunderstorm.svg';
-  } else if ((id >= 701 && id <= 781) || id === 803 || id === 804) {
+  } else if (
+    (weatherId >= 701 && weatherId <= 781) ||
+    weatherId === 803 ||
+    weatherId === 804
+  ) {
     return 'cloudy.svg';
-  } else if (id >= 300 && id <= 321) {
+  } else if (weatherId >= 300 && weatherId <= 321) {
     return 'rainy-grayCloud.svg';
-  } else if (id === 511) {
+  } else if (weatherId === 511) {
     return 'rainySnowy-grayCloud.svg';
-  } else if (id >= 520 && id <= 531) {
+  } else if (weatherId >= 520 && weatherId <= 531) {
     return 'rainy-grayCloud.svg';
-  } else if (id === 800) {
+  } else if (weatherId === 800) {
     return isDay ? 'sun.svg' : 'moon.svg';
-  } else if (id === 801) {
+  } else if (weatherId === 801) {
     return isDay ? 'cloudyDay-whiteCloud.svg' : 'cloudyNight-whiteCloud.svg';
-  } else if (id === 802) {
+  } else if (weatherId === 802) {
     return isDay ? 'cloudyDay-grayCloud.svg' : 'cloudyNight-grayCloud.svg';
-  } else if (id >= 500 && id <= 504) {
+  } else if (weatherId >= 500 && weatherId <= 504) {
     return isDay ? 'rainyDay-grayCloud.svg' : 'rainy-grayCloud.svg';
-  } else if (id >= 600 && id <= 622) {
+  } else if (weatherId >= 600 && weatherId <= 622) {
     return isDay ? 'snowyDay-grayCloud.svg' : 'snowy-grayCloud.svg';
   }
 }
