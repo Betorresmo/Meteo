@@ -5,7 +5,7 @@ import switchTemperatureUnit from './temperatureUnitSwitch.js';
 const searchButton = document.querySelector('.search-button');
 let temperatureInCelcius;
 
-window.onload = () => {
+/* window.onload = () => {
   navigator.geolocation.getCurrentPosition(
     async (position) => {
       const coordinates = {
@@ -36,6 +36,6 @@ searchButton.addEventListener('click', async () => {
   } catch (err) {
     alert('City not found.');
   }
-});
+}); */
 const temperatureH2 = document.querySelector('.information-temperature');
 temperatureH2.addEventListener('click', switchTemperatureUnit);

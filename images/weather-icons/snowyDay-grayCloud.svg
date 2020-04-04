@@ -4,9 +4,9 @@
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
-    width="64"
-    height="64"
-    viewbox="0 0 64 64">
+    width="45"
+    height="45"
+    viewbox="0 0 45 45">
     <defs>
         <filter id="blur" width="200%" height="200%">
             <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
@@ -174,7 +174,7 @@
         ]]></style>
     </defs>
     <g filter="url(#blur)" id="snowy-1">
-        <g transform="translate(20,10)">
+        <g transform="translate(17,0)">
             <g transform="translate(0,16), scale(1.2)">
                 <g class="am-weather-sun">
                     <g>
@@ -210,7 +210,7 @@
         </g>
         <g transform="translate(20,9)">
             <g class="am-weather-snow-1">
-                <g transform="translate(7,28)">
+                <g transform="translate(7,18)">
                     <line fill="none" stroke="#d0d2d3" stroke-linecap="round" stroke-width="1.2" transform="translate(0,9), rotate(0)" x1="0" x2="0" y1="-2.5" y2="2.5" />
                     <line fill="none" stroke="#d0d2d3" stroke-linecap="round" stroke-width="1" transform="translate(0,9), rotate(45)" x1="0" x2="0" y1="-2.5" y2="2.5" />
                     <line fill="none" stroke="#d0d2d3" stroke-linecap="round" stroke-width="1" transform="translate(0,9), rotate(90)" x1="0" x2="0" y1="-2.5" y2="2.5" />
@@ -218,7 +218,7 @@
                 </g>
             </g>
             <g class="am-weather-snow-2">
-                <g transform="translate(16,28)">
+                <g transform="translate(16,18)">
                     <line fill="none" stroke="#d0d2d3" stroke-linecap="round" stroke-width="1.2" transform="translate(0,9), rotate(0)" x1="0" x2="0" y1="-2.5" y2="2.5" />
                     <line fill="none" stroke="#d0d2d3" stroke-linecap="round" stroke-width="1" transform="translate(0,9), rotate(45)" x1="0" x2="0" y1="-2.5" y2="2.5" />
                     <line fill="none" stroke="#d0d2d3" stroke-linecap="round" stroke-width="1" transform="translate(0,9), rotate(90)" x1="0" x2="0" y1="-2.5" y2="2.5" />
