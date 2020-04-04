@@ -1,19 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 * {
   margin: 0;
   border: 0;
   box-sizing: border-box;
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.12rem;
+  input:focus,
+  textarea:focus,
+  select:focus,
+  button:focus {
+    outline: none;
+  }
 }
 :root {
   font-size: 20px;
-  font-family: sans-serif;
-  font-weight: bold;
+  --night-gradient-background1: #252238;
+  --night-gradient-background2: #322f46;
+  --night-gradient-background3: #312e47;
+  //---
+  --day-gradient-brackground1: rgb(60, 145, 194);
+  --day-gradient-brackground2: rgb(67, 134, 173);
+  --day-gradient-brackground3: rgb(81, 143, 179);
+}
+.nightTheme {
+  --backgroundGradient: linear-gradient(
+    10deg,
+    var(--night-gradient-background1) 0%,
+    var(--night-gradient-background2) 70%,
+    var(--night-gradient-background2) 100%
+  );
+}
+.dayTheme {
+  --backgroundGradient: linear-gradient(
+    10deg,
+    var(--day-gradient-brackground1) 0%,
+    var(--day-gradient-brackground2) 70%,
+    var(--day-gradient-brackground3) 100%
+  );
 }
 
-$backgroundColor: linear-gradient(10deg, #363062 0%, #827397 70%, #4d4c7d 100%);
-$fontColor: #fff;
-$descriptionFontColor: rgba(255, 255, 255, 0.658);
-$padding: 2rem 0;
+$padding: 1rem 0;
+$locationFontSize: 1.5rem;
+$temperatureFontSize: 2rem;
+$descriptionFontSize: 0.8rem;
+$searchFontSize: 1rem;
+$primaryFontColor: #fff;
+$secondaryFontColor: rgba(255, 255, 255, 0.658);
+$searchBoxFontColor: rgb(34, 34, 34);
 
 @mixin flexJustifyAlignCenter {
   display: flex;
@@ -24,40 +58,94 @@ $padding: 2rem 0;
 body {
   width: 100vw;
   height: 100vh;
-  background: $backgroundColor;
+  overflow: hidden;
+  background: var(--backgroundGradient);
   @include flexJustifyAlignCenter();
 }
 
 .container {
   width: 60%;
   max-width: 800px;
-  max-height: auto;
-  color: $fontColor;
+  @include flexJustifyAlignCenter();
+  flex-direction: column;
+  color: $primaryFontColor;
 
-  & .location h1 {
-    font-size: 1.5rem;
+  & .location {
+    @include flexJustifyAlignCenter();
     padding: $padding;
+
+    svg {
+      height: $locationFontSize;
+      margin-right: 0.5rem;
+      fill: $primaryFontColor;
+    }
+    h1 {
+      font-size: $locationFontSize;
+      font-weight: 500;
+    }
   }
+
   & .icon img {
     width: 50%;
     min-width: 300px;
   }
+
   & .information {
     @include flexJustifyAlignCenter();
     flex-direction: column;
     padding: $padding;
 
     & .information-temperature {
-      font-size: 2rem;
+      font-size: $temperatureFontSize;
+      font-weight: 700;
+      @include flexJustifyAlignCenter();
 
       &:hover {
         cursor: pointer;
       }
     }
+
     & .information-description {
-      color: $descriptionFontColor;
-      font-size: 1rem;
-      padding: 0.5rem;
+      color: $secondaryFontColor;
+      font-size: $descriptionFontSize;
+      font-weight: 400;
+    }
+  }
+
+  & .search {
+    @include flexJustifyAlignCenter();
+    align-items: stretch;
+    margin-top: 1rem;
+    padding: 0.2rem;
+    background: $secondaryFontColor;
+    opacity: 0.7;
+    border-radius: 0.2rem;
+    width: 100%;
+    max-width: 400px;
+
+    & input {
+      width: 80%;
+      flex-grow: 3;
+      background: 0;
+      color: $searchBoxFontColor;
+      font-size: $searchFontSize;
+      font-weight: 500;
+    }
+
+    & button {
+      flex-grow: 1;
+      background: 0;
+      @include flexJustifyAlignCenter();
+
+      & svg {
+        height: $searchFontSize;
+        fill: $searchBoxFontColor;
+      }
+      transition: 150ms all ease;
+
+      &:active {
+        transform: scale(0.8);
+      }
     }
   }
 }

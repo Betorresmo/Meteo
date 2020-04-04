@@ -1,6 +1,6 @@
 import setValues from './setValues.js';
 import getWeatherData from './getWeatherData.js';
-import setIcon from './setIcon.js';
+import setIconTheme from './setIconTheme.js';
 import getLocalTime from './getLocalTime.js';
 
-export { setValues, getWeatherData, setIcon, getLocalTime };
+export { setValues, getWeatherData, setIconTheme, getLocalTime };

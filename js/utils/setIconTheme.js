@@ -1,12 +1,7 @@
 import getLocalTime from './getLocalTime.js';
 
-function returnIconName(data) {
+function returnIconName(data, localHour) {
   //Weather Conditions ID Documentation -> https://openweathermap.org/weather-conditions
-
-  const utcTimeInMs = data.dt * 1000;
-  const localTimezoneInMs = data.timezone * 1000;
-  const localTime = getLocalTime(utcTimeInMs, localTimezoneInMs);
-  const localHour = localTime.getHours();
 
   const weatherId = data.weather[0].id;
   const isDay = localHour > 6 && localHour <= 18;
@@ -37,8 +32,19 @@ function returnIconName(data) {
     return isDay ? 'snowyDay-grayCloud.svg' : 'snowy-grayCloud.svg';
   }
 }
-export default function setIcon(data) {
-  const iconName = returnIconName(data);
+export default function setIconTheme(data) {
+  const utcTimeInMs = data.dt * 1000;
+  const localTimezoneInMs = data.timezone * 1000;
+  const localTime = getLocalTime(utcTimeInMs, localTimezoneInMs);
+  const localHour = localTime.getHours();
+
+  const iconName = returnIconName(data, localHour);
+  const body = document.querySelector('body');
+  if (localHour > 6 && localHour <= 18) {
+    body.classList.replace('nightTheme', 'dayTheme');
+  } else {
+    body.classList.replace('dayTheme', 'nightTheme');
+  }
 
   const iconDiv = document.querySelector('.icon');
   const newIcon = document.createElement('img');

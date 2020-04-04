@@ -1,13 +1,10 @@
 export default function setValues(data) {
   const { name } = data;
   const {
-    sys: { country }
+    main: { temp },
   } = data;
   const {
-    main: { temp }
-  } = data;
-  const {
-    weather: [{ description }]
+    weather: [{ description }],
   } = data;
 
   const descriptionDiv = document.querySelector('.information-description');
@@ -15,7 +12,7 @@ export default function setValues(data) {
     '.information-temperature-value'
   );
   const locationDiv = document.querySelector('.location-name');
-  const locationString = `${name}, ${country}`;
+  const locationString = name;
 
   temperatureSpan.textContent = parseInt(temp);
   descriptionDiv.textContent = description.toUpperCase();
