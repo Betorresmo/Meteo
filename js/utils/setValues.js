@@ -7,14 +7,14 @@ export default function setValues(data) {
     weather: [{ description: weatherDescription }],
   } = data;
   const {
-    temp: temperature,
+    temp: mainTemperature,
     feels_like: feelsLike,
     temp_min: minTemperature,
     temp_max: maxTemperature,
     humidity,
   } = data.main;
 
-  const domIdentifier = [
+  const domElements = [
     '.location-name',
     '.information-description',
     '#temperatureValue',
@@ -27,15 +27,15 @@ export default function setValues(data) {
   const valuesToInsert = [
     locationName,
     weatherDescription.toUpperCase(),
-    parseInt(temperature),
+    parseInt(mainTemperature),
     parseInt(minTemperature),
     parseInt(maxTemperature),
     parseInt(feelsLike),
     windSpeed,
     humidity,
   ];
-  for (const domElement of domIdentifier) {
-    document.querySelector(domElement).textContent =
-      valuesToInsert[domIdentifier.indexOf(domElement)];
+  for (const element of domElements) {
+    document.querySelector(element).textContent =
+      valuesToInsert[domElements.indexOf(element)];
   }
 }

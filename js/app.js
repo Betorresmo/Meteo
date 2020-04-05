@@ -1,10 +1,14 @@
-export { temperatureInCelcius };
-import { setIconTheme, setValues, getWeatherData } from './utils/Index.js';
-import { moveScreenTouch, moveScreenWheel } from './moveScreen.js';
-import switchTemperatureUnit from './temperatureUnitSwitch.js';
+import {
+  setValues,
+  setIconTheme,
+  getWeatherData,
+  moveScreenTouch,
+  moveScreenWheel,
+  convertTempUnit,
+} from './utils/Index.js';
 
 const searchButton = document.querySelector('.search-button');
-let temperatureInCelcius;
+let mainData;
 
 window.onload = () => {
   navigator.geolocation.getCurrentPosition(
@@ -16,8 +20,7 @@ window.onload = () => {
       const data = await getWeatherData('byCoordinates', '', coordinates);
       setValues(data);
       setIconTheme(data);
-      console.log(data);
-      temperatureInCelcius = data.main.temp;
+      mainData = data.main;
     },
     () => alert('The browser was not able to access your location.')
   );
@@ -34,13 +37,15 @@ searchButton.addEventListener('click', async () => {
 
     setValues(data);
     setIconTheme(data);
-    temperatureInCelcius = data.main.temp;
+    mainData = data.main;
   } catch (err) {
     alert('City not found.');
   }
 });
 const temperatureH2 = document.querySelector('.information-temperature');
-temperatureH2.addEventListener('click', switchTemperatureUnit);
+temperatureH2.addEventListener('click', () => {
+  convertTempUnit(mainData);
+});
 
 window.addEventListener('wheel', moveScreenWheel);
 
