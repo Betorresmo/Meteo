@@ -1,4 +1,4 @@
-export {moveScreenTouch, moveScreenWheel};
+export { moveScreenTouch, moveScreenWheel };
 
 function moveScreenWheel(event) {
   const sectionMain = document.querySelector('.main');
@@ -15,6 +15,7 @@ function moveScreenWheel(event) {
 function moveScreenTouch() {
   const sectionMain = document.querySelector('.main');
   const sectionDetails = document.querySelector('.details');
+
   sectionMain.classList.toggle('moveUp');
   sectionDetails.classList.toggle('moveUp');
 }

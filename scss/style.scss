@@ -27,15 +27,15 @@
   --backgroundGradient: linear-gradient(
     10deg,
     var(--night-gradient-background1) 0%,
-    var(--night-gradient-background2) 65%,
-    var(--night-gradient-background2) 100%
+    var(--night-gradient-background2) 50%,
+    var(--night-gradient-background3) 100%
   );
 }
 .dayTheme {
   --backgroundGradient: linear-gradient(
     10deg,
     var(--day-gradient-brackground1) 0%,
-    var(--day-gradient-brackground2) 65%,
+    var(--day-gradient-brackground2) 50%,
     var(--day-gradient-brackground3) 100%
   );
 }
