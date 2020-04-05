@@ -22,6 +22,7 @@ export default function setValues(data) {
     '#temperatureMaxValue',
     '#temperatureFeelsValue',
     '#windSpeedValue',
+    '#windDirectionValue',
     '#humidityValue',
   ];
   const valuesToInsert = [
@@ -32,6 +33,7 @@ export default function setValues(data) {
     parseInt(maxTemperature),
     parseInt(feelsLike),
     windSpeed,
+    windDirection,
     humidity,
   ];
   for (const element of domElements) {

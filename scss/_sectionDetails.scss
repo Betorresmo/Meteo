@@ -24,6 +24,7 @@
   }
   .especifics-item {
     @include flexJustifyAlignCenter();
+    justify-content: flex-start;
     padding-top: $padding;
     color: $secondaryFontColor;
 
