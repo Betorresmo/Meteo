@@ -28,7 +28,7 @@
 
 - [JavaScript](https://www.javascript.com/)
 - [Sass (CSS3)](https://sass-lang.com/)
-- [HTML5](https://html.com/)
+- [HTML5](https://html5.org/)
 
 ### 📡 APIs
 
