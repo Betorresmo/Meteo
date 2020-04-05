@@ -1,0 +1,84 @@
+.main {
+  & .location {
+    @include flexJustifyAlignCenter();
+    padding: $padding 0;
+
+    svg {
+      height: $titleFontSize;
+      margin-right: 0.5rem;
+      fill: $primaryFontColor;
+    }
+    h1 {
+      font-size: $titleFontSize;
+      font-weight: 500;
+    }
+  }
+
+  & .icon img {
+    width: 50%;
+    min-width: 300px;
+  }
+
+  & .information {
+    @include flexJustifyAlignCenter();
+    flex-direction: column;
+    padding: $padding 0;
+
+    &-temperature {
+      font-size: $temperatureFontSize;
+      font-weight: 700;
+      @include flexJustifyAlignCenter();
+      @include transitionEase();
+
+      &:hover {
+        cursor: pointer;
+      }
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+
+    &-description {
+      color: $secondaryFontColor;
+      font-size: $descriptionFontSize;
+      font-weight: 400;
+    }
+  }
+
+  & .search {
+    @include flexJustifyAlignCenter();
+    align-items: stretch;
+    margin-top: 1rem;
+    padding: 0.2rem;
+    background: $secondaryFontColor;
+    opacity: 0.7;
+    border-radius: 0.2rem;
+    width: 100%;
+    max-width: 400px;
+
+    & input {
+      width: 80%;
+      flex-grow: 3;
+      background: 0;
+      color: $darkFontColor;
+      font-size: $regularFontSize;
+      font-weight: 500;
+    }
+
+    & button {
+      flex-grow: 1;
+      background: 0;
+      @include flexJustifyAlignCenter();
+      @include transitionEase();
+
+      & svg {
+        height: $regularFontSize;
+        fill: $darkFontColor;
+      }
+
+      &:active {
+        transform: scale(0.8);
+      }
+    }
+  }
+}

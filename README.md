@@ -20,9 +20,9 @@
 - [ ] ~Auto complete and suggestions for city inputs~ [Google](https://developers.google.com/places/web-service/autocomplete) wants my credit card 💳
 - [x] Icons according to the current weather
 - [x] Dark theme during night
-- [ ] Detais section (relative humidity, cloud cover, precipitation)
+- [x] Detais section (relative humidity, cloud cover, precipitation)
 - [ ] Show forecast for the next 7 days
-- [ ] Show min and max temperature
+- [x] Show min and max temperature
 
 ### ⌨️ Code
 

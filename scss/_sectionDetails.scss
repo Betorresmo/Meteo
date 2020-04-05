@@ -1,0 +1,41 @@
+.details {
+  h1 {
+    font-size: $temperatureFontSize;
+    font-weight: 500;
+  }
+  & .temperature {
+    padding-top: $padding;
+    @include flexJustifyAlignCenter();
+
+    &-minmax {
+      @include flexJustifyAlignCenter();
+
+      &:nth-child(2) {
+        margin-left: 2rem;
+      }
+      svg {
+        height: $titleFontSize;
+        fill: $primaryFontColor;
+        margin-right: 0.5rem;
+      }
+      h3 {
+        font-size: $titleFontSize;
+      }
+    }
+  }
+  & .especifics-item {
+    @include flexJustifyAlignCenter();
+    padding-top: $padding;
+    color: $secondaryFontColor;
+
+    svg {
+      height: 1rem;
+      margin-right: 0.5rem;
+      fill: $secondaryFontColor;
+    }
+    h4 {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  }
+}

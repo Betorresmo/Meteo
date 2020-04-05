@@ -1,5 +1,6 @@
 export { temperatureInCelcius };
 import { setIconTheme, setValues, getWeatherData } from './utils/Index.js';
+import { moveScreenTouch, moveScreenWheel } from './moveScreen.js';
 import switchTemperatureUnit from './temperatureUnitSwitch.js';
 
 const searchButton = document.querySelector('.search-button');
@@ -15,6 +16,7 @@ window.onload = () => {
       const data = await getWeatherData('byCoordinates', '', coordinates);
       setValues(data);
       setIconTheme(data);
+      console.log(data);
       temperatureInCelcius = data.main.temp;
     },
     () => alert('The browser was not able to access your location.')
@@ -39,3 +41,9 @@ searchButton.addEventListener('click', async () => {
 });
 const temperatureH2 = document.querySelector('.information-temperature');
 temperatureH2.addEventListener('click', switchTemperatureUnit);
+
+window.addEventListener('wheel', moveScreenWheel);
+
+const scrollArrows = document.querySelectorAll('.scroll');
+scrollArrows[0].addEventListener('click', moveScreenTouch);
+scrollArrows[1].addEventListener('click', moveScreenTouch);
