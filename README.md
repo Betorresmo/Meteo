@@ -1,7 +1,7 @@
 <h1 align="center">
   <img src="./images/github/meteo-logo.svg" width="200px" />
 </h1>
-<h4 align="center">👨🏻‍🚀 Almost done...</h4>
+<h4 align="center">👨🏻‍🚀 Know what's happening up above</h4>
 
 ### 📺 Preview
 
