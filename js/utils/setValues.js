@@ -1,28 +1,41 @@
 export default function setValues(data) {
-  const locationName = data.name;
-  const temperature = data.main.temp;
-  const weatherDescription = data.weather[0].description;
-  const minTemperature = data.main.temp_min;
-  const maxTemperature = data.main.temp_max;
-  const feelslike = data.main.feels_like;
-  const windSpeed = data.wind.speed;
-  const humidity = data.main.humidity;
+  const { name: locationName } = data;
+  const {
+    wind: { speed: windSpeed, deg: windDirection },
+  } = data;
+  const {
+    weather: [{ description: weatherDescription }],
+  } = data;
+  const {
+    temp: temperature,
+    feels_like: feelsLike,
+    temp_min: minTemperature,
+    temp_max: maxTemperature,
+    humidity,
+  } = data.main;
 
-  const locationDiv = document.querySelector('.location-name');
-  const descriptionDiv = document.querySelector('.information-description');
-  const temperatureSpan = document.querySelector('#temperatureValue');
-  const minTemperatureSpan = document.querySelector('#temperatureMinValue');
-  const maxTemperatureSpan = document.querySelector('#temperatureMaxValue');
-  const feelsLikeSpan = document.querySelector('#temperatureFeelsValue');
-  const windSpeedSpan = document.querySelector('#windSpeedValue');
-  const humiditySpan = document.querySelector('#humidityValue');
-
-  temperatureSpan.textContent = parseInt(temperature);
-  descriptionDiv.textContent = weatherDescription.toUpperCase();
-  locationDiv.textContent = locationName;
-  minTemperatureSpan.textContent = parseInt(minTemperature);
-  maxTemperatureSpan.textContent = parseInt(maxTemperature);
-  feelsLikeSpan.textContent = parseInt(feelslike);
-  windSpeedSpan.textContent = windSpeed;
-  humiditySpan.textContent = humidity;
+  const domIdentifier = [
+    '.location-name',
+    '.information-description',
+    '#temperatureValue',
+    '#temperatureMinValue',
+    '#temperatureMaxValue',
+    '#temperatureFeelsValue',
+    '#windSpeedValue',
+    '#humidityValue',
+  ];
+  const valuesToInsert = [
+    locationName,
+    weatherDescription.toUpperCase(),
+    parseInt(temperature),
+    parseInt(minTemperature),
+    parseInt(maxTemperature),
+    parseInt(feelsLike),
+    windSpeed,
+    humidity,
+  ];
+  for (const domElement of domIdentifier) {
+    document.querySelector(domElement).textContent =
+      valuesToInsert[domIdentifier.indexOf(domElement)];
+  }
 }
