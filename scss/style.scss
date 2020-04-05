@@ -18,7 +18,7 @@
   --night-gradient-background1: #252238;
   --night-gradient-background2: #322f46;
   --night-gradient-background3: #312e47;
-  //---
+
   --day-gradient-brackground1: rgb(60, 145, 194);
   --day-gradient-brackground2: rgb(67, 134, 173);
   --day-gradient-brackground3: rgb(81, 143, 179);
@@ -27,7 +27,7 @@
   --backgroundGradient: linear-gradient(
     10deg,
     var(--night-gradient-background1) 0%,
-    var(--night-gradient-background2) 70%,
+    var(--night-gradient-background2) 65%,
     var(--night-gradient-background2) 100%
   );
 }
@@ -35,7 +35,7 @@
   --backgroundGradient: linear-gradient(
     10deg,
     var(--day-gradient-brackground1) 0%,
-    var(--day-gradient-brackground2) 70%,
+    var(--day-gradient-brackground2) 65%,
     var(--day-gradient-brackground3) 100%
   );
 }
@@ -76,28 +76,30 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  & section {
-    color: $primaryFontColor;
-    min-height: 100vh;
+
+  section {
     @include flexJustifyAlignCenter();
     flex-direction: column;
-    transition: 400ms transform ease;
     position: relative;
+    min-height: 100vh;
+    color: $primaryFontColor;
+    transition: 400ms transform ease;
 
-    & .scroll svg {
-      fill: $secondaryFontColor;
-      height: 2rem;
+    & .scroll {
+      position: absolute;
+      img {
+        height: 2rem;
+      }
     }
   }
 }
 .up {
   bottom: 1rem;
-  position: absolute;
 }
 .down {
   top: 1rem;
-  position: absolute;
 }
+
 @import './sectionMain';
 @import './sectionDetails';
 

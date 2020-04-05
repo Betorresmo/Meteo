@@ -1,12 +1,12 @@
 .main {
-  & .location {
+  .location {
     @include flexJustifyAlignCenter();
+    width: 100%;
     padding: $padding 0;
 
-    svg {
+    img {
       height: $titleFontSize;
       margin-right: 0.5rem;
-      fill: $primaryFontColor;
     }
     h1 {
       font-size: $titleFontSize;
@@ -14,12 +14,12 @@
     }
   }
 
-  & .icon img {
+  .icon img {
     width: 50%;
     min-width: 300px;
   }
 
-  & .information {
+  .information {
     @include flexJustifyAlignCenter();
     flex-direction: column;
     padding: $padding 0;
@@ -45,7 +45,7 @@
     }
   }
 
-  & .search {
+  .search {
     @include flexJustifyAlignCenter();
     align-items: stretch;
     margin-top: 1rem;
@@ -56,7 +56,7 @@
     width: 100%;
     max-width: 400px;
 
-    & input {
+    input {
       width: 80%;
       flex-grow: 3;
       background: 0;
@@ -65,15 +65,14 @@
       font-weight: 500;
     }
 
-    & button {
+    button {
       flex-grow: 1;
       background: 0;
       @include flexJustifyAlignCenter();
       @include transitionEase();
 
-      & svg {
+      img {
         height: $regularFontSize;
-        fill: $darkFontColor;
       }
 
       &:active {
