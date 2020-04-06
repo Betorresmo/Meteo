@@ -10,7 +10,7 @@
 ### 💡 Functionalities
 
 - Location is identified automatically (must allow browser to access location)
-- User can see the local temperature (updated every 3 hours)
+- User can see the local temperature
 - By clicking on the temperature, the user can switch between celcius and fahrenheit
 - A small description of the current weather is shown below the temperature
 - User can scroll down to see details about the weather
@@ -39,4 +39,4 @@
 - ~[7Timer!](http://www.7timer.info/)~
 - [Open Weather](https://openweathermap.org/api)
 
-## [Contact me](https://www.linkedin.com/in/guerrero-roberto/)
+## 📬 [Contact me](https://www.linkedin.com/in/guerrero-roberto/)
