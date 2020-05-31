@@ -19,7 +19,7 @@
 ### 🛠️ Implementations
 
 - [x] Update interface
-- [x] Location shown is indenfied and updated dynamically
+- [x] Location shown is identified and updated dynamically
 - [x] Allow user to input any city
 - [ ] ~Auto complete and suggestions for city inputs~ [Google](https://developers.google.com/places/web-service/autocomplete) wants my credit card 💳
 - [x] Icons according to the current weather
